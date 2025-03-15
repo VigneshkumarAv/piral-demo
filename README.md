@@ -18,3 +18,10 @@
 - Registered Calendar Menu
 - Registered Tile to get and show data from first pilet
 - Registered Extension to extend Carousel
+
+![Homepage Screenshot](screenshots/MainPage.JPG)
+![Carousel Screenshot](screenshots/Carousel.JPG)
+![Mario page Screenshot](screenshots/Mario.JPG)
+![Api data page Screenshot](screenshots/ApiData.JPG)
+![Movie trailer page Screenshot](screenshots/Movietrailer.JPG)
+![Calendar page Screenshot](screenshots/Calendar.JPG)   
