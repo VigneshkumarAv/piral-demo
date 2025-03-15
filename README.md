@@ -23,5 +23,5 @@
 ![Carousel Screenshot](screenshots/Carousel.JPG)
 ![Mario page Screenshot](screenshots/Mario.JPG)
 ![Api data page Screenshot](screenshots/ApiData.JPG)
-![Movie trailer page Screenshot](screenshots/Movietrailer.JPG)
+![Movie trailer page Screenshot](screenshots/MovieTrailer.JPG)
 ![Calendar page Screenshot](screenshots/Calendar.JPG)   
