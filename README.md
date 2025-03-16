@@ -25,7 +25,10 @@
 - Used **Emit** to send the Message from Pilet1
 - Used **on** to receive Message in Pilet2
 - Published Pilets to Piral Feed Service
-  
+- added lazy loading for all components
+- Moved pilet Apis to index.tsx and module from the React Components  
+
+
 HomePage from Main Shell 
 ![Homepage Screenshot](screenshots/Main.JPG)
 Carousel Page from Pilet2

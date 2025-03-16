@@ -1,5 +1,4 @@
 import * as React from "react";
-import type { PiletApi } from 'my-app';
 import { subscribeToMessages } from "../module/chatService";
 
 const ChatReceiver: React.FC = () => {
