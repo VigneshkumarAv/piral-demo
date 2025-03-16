@@ -1,27 +1,20 @@
 import * as React from "react";
 import type { PiletApi } from 'my-app';
+import { subscribeToMessages } from "../module/chatService";
 
-
-interface ChatReceiverProps {
-  app: PiletApi;
-}
-
-const ChatReceiver: React.FC<ChatReceiverProps> = ({ app }) => {
+const ChatReceiver: React.FC = () => {
   const [messages, setMessages] = React.useState<{ sender: string; text: string }[]>(
     []
   );
 
   React.useEffect(() => {
-    const handler = (ev: { sender: string; text: string }) => {
-      setMessages((prev) => [...prev, ev]); 
-    };
+    const unsubscribe = subscribeToMessages((message) => {
+      setMessages((prev) => [...prev, message]);
+    });
 
-    app.on("chat-message", handler);
+    return ()=> {unsubscribe;} // Cleanup function
+  }, []);
 
-    return () => {
-      app.off("chat-message", handler); 
-    };
-  }, [app]);
 
   return (
     <div>

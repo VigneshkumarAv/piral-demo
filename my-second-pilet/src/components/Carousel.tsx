@@ -2,7 +2,7 @@ import * as React from "react";
 import { sculptureList } from "../data/carousel";
 import "../style.scss";
 
-export const Carousel: React.FC = () => {
+const Carousel: React.FC = () => {
   const [index, setIndex] = React.useState<number>(0);
   const [showMore, setShowMore] = React.useState<boolean>(false);
   
@@ -48,3 +48,4 @@ export const Carousel: React.FC = () => {
     </>
   );
 };
+export default Carousel;

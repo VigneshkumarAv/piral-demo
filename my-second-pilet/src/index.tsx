@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import type { PiletApi } from 'my-app';
-import { Carousel } from './components/Carousel.js';
-import ChatReceiver from './components/ChatReceiver.js';
 
-const Calendar = React.lazy(() => import('./components/Calendar.js'));
+const Calendar = React.lazy(() => import('./components/Calendar'));
+const ChatReceiver = React.lazy(()=> import('./components/ChatReceiver'));
+const Carousel = React.lazy(()=> import('./components/Carousel'));
 
 export function setup(app: PiletApi) {
   
@@ -18,7 +18,7 @@ export function setup(app: PiletApi) {
   app.registerExtension("Carousel", Carousel);
   
 
-  app.registerTile((props)=> <ChatReceiver app={app} {...props}/>,
+  app.registerTile(()=> <ChatReceiver/>,
   { initialColumns: 3, initialRows: 3 });
  
 }

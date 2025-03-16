@@ -2,18 +2,11 @@ import * as React from 'react';
 import type { PiletApi } from 'my-app';
 
 interface ChatSenderProps {
-    app: PiletApi
+  sendMessage: (message: string) => void; 
 }
 
-const ChatSender: React.FC<ChatSenderProps>  = ({ app }) => {
+const ChatSender: React.FC<ChatSenderProps>  = ({ sendMessage }) => {
   const [message, setMessage] = React.useState<string>("");
-
-  const sendMessage = () => {
-    if (message.trim()) {
-      app.emit("chat-message", { text: message, sender: "Pilet 1" });
-      setMessage(""); // Clear input after sending
-    }
-  };
 
   return (
     <div>
@@ -24,7 +17,7 @@ const ChatSender: React.FC<ChatSenderProps>  = ({ app }) => {
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Type a message..."
       />
-      <button onClick={sendMessage}>Send Message</button>
+      <button onClick={() => { sendMessage(message); setMessage(""); }}>Send Message</button>
     </div>
   );
 };

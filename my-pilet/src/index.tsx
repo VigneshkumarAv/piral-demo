@@ -1,13 +1,13 @@
 import * as React from 'react';
 import type { PiletApi } from 'my-app';
 import {Link} from 'react-router-dom';
-import Mario from './components/Mario';
 import "./style.scss";
-import Movie from './components/Movie';
 import MarioImg from './static/icons/Mario.png';
-import ChatSender from './components/ChatSender';
 
 const Page = React.lazy(() => import('./components/Page'));
+const Movie = React.lazy(()=> import('./components/Movie'));
+const Mario = React.lazy(()=> import('./components/Mario'));
+const ChatSender = React.lazy(()=> import('./components/ChatSender'));
 
 export function setup(app: PiletApi) {
   
@@ -23,8 +23,13 @@ export function setup(app: PiletApi) {
     initialRows: 2,
   });
 
+  const sendMessage = (message: string) => {
+    if (message.trim()) {
+      app.emit("chat-message", { text: message, sender: "Pilet 1" });
+    }
+  };
   app.registerTile(
-    (props) => <ChatSender app={app} {...props}/>,
+    (props) => <ChatSender sendMessage={sendMessage} {...props}/>,
     { initialColumns: 3, initialRows: 2 }
   );
 
