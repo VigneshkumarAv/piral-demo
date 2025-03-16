@@ -5,6 +5,7 @@ import Mario from './components/Mario';
 import "./style.scss";
 import Movie from './components/Movie';
 import MarioImg from './static/icons/Mario.png';
+import ChatSender from './components/ChatSender';
 
 const Page = React.lazy(() => import('./components/Page'));
 
@@ -22,6 +23,11 @@ export function setup(app: PiletApi) {
     initialRows: 2,
   });
 
+  app.registerTile(
+    (props) => <ChatSender app={app} {...props}/>,
+    { initialColumns: 3, initialRows: 2 }
+  );
+
   app.registerTile('first-tile',() => <Link to="/sample"><h4>My Pilet <br/> Api Data</h4>
   </Link>
   , {
@@ -30,7 +36,12 @@ export function setup(app: PiletApi) {
   });
 
   const connect = app.createConnector(()=> fetch('https://jsonplaceholder.typicode.com/posts').then(res=>res.json()))
-  
+
+  app.registerPage('/shared',() =>  <div>
+  <h4>Shared to pilet1 from pilet2 </h4>
+  <app.Extension name="Carousel" />
+  </div>);
+  app.registerMenu("Shared", () => <Link to="/shared">Shared</Link>);
   app.registerPage("/sample",connect(({data})=>{
     return <Page data={data} />
   }));

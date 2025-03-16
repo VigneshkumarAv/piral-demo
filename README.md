@@ -17,11 +17,18 @@
 - Registered Calendar Page
 - Registered Calendar Menu
 - Registered Tile to get and show data from first pilet
-- Registered Extension to extend Carousel
+- Registered Extension to extend Carousel to main shell
+- Shared Carousel component from pilet2 to pilet1 using Extension
+- Registered tile for Chat Sender in Pilet1
+- Registered tile for Chat Receiver in Pilet2
+- Added Input and button to get Message
+- Used Emit to send the Message from Pilet1
+- Used on to receive Message in Pilet2
 
-![Homepage Screenshot](screenshots/MainPage.JPG)
+![Homepage Screenshot](screenshots/Main.JPG)
 ![Carousel Screenshot](screenshots/Carousel.JPG)
 ![Mario page Screenshot](screenshots/Mario.JPG)
 ![Api data page Screenshot](screenshots/ApiData.JPG)
 ![Movie trailer page Screenshot](screenshots/MovieTrailer.JPG)
 ![Calendar page Screenshot](screenshots/Calendar.JPG)   
+![Component Shared Betweeen Pilets page Screenshot](screenshots/SharedBetweenPilets.JPG)   
